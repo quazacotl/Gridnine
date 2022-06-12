@@ -2,7 +2,7 @@ import Flight from "./Flight";
 import {useEffect, useState} from "react";
 
 const FlightsWrapper = ({flights}) => {
-    const [offset, setOffset] = useState(10)
+    const [offset, setOffset] = useState(5)
     const [activeFlights, setActiveFlights] = useState(flights.slice(0, offset))
 
 
@@ -54,7 +54,7 @@ const FlightsWrapper = ({flights}) => {
                     )
                 })}
                 <button
-                    onClick={() => setOffset(offset + 10)}
+                    onClick={() => setOffset(offset + 5)}
                     className={'w-52 mx-auto py-1 bg-gray-300 border active:bg-gray-400 focus:ring focus:outline-none'}
                 >
                     Показать ещё

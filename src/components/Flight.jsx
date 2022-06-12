@@ -45,7 +45,6 @@ const Flight = (props) => {
         )
     }
 
-
     return (
         <div className={'flex flex-col w-[900px]'}>
             <div className={'flex justify-between items-center p-2 bg-blue-600'}>
