@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import SideFilters from "./components/SideFilters";
+import FlightsWrapper from "./components/FlightsWrapper";
+import {useState} from "react";
+import aviaDB from "./flights.json";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [flights, setFlights] = useState(aviaDB.result.flights)
+
+    return (
+      <div className={'flex'}>
+        <SideFilters setFlights={setFlights}/>
+        <FlightsWrapper flights={flights}/>
+      </div>
+    );
 }
 
 export default App;
